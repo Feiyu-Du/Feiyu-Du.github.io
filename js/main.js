@@ -92,7 +92,6 @@ async function initNews() {
 }
 
 function initUI() {
-  document.querySelector('#year').textContent = new Date().getFullYear();
   const portrait = document.querySelector('.portrait img');
   portrait.addEventListener('error', () => { portrait.closest('.portrait').classList.add('placeholder'); portrait.src = portrait.dataset.fallback; }, { once: true });
   const toggle = document.querySelector('.nav-toggle'); const links = document.querySelector('#nav-links');
