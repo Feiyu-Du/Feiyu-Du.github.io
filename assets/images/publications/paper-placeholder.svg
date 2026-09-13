@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-labelledby="title desc">
+  <title id="title">Paper figure pending</title>
+  <desc id="desc">Neutral placeholder indicating that a verified paper figure has not yet been added.</desc>
+  <rect width="480" height="300" fill="#f3f4f3"/>
+  <rect x="1" y="1" width="478" height="298" fill="none" stroke="#d9dddf"/>
+  <path d="M195 105h90v90h-90z" fill="none" stroke="#a9b2b8" stroke-width="2"/>
+  <path d="m210 174 21-25 17 17 12-12 15 20" fill="none" stroke="#a9b2b8" stroke-width="2"/>
+  <circle cx="260" cy="128" r="7" fill="#a9b2b8"/>
+  <text x="240" y="226" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#707980">Verified figure pending</text>
+</svg>

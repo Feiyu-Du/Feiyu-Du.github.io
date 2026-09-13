@@ -1,0 +1,68 @@
+[
+  {
+    "id": "ttm-2026", "year": 2026, "featured": true, "category": "multimodal",
+    "title": "Talking to Me or Someone Else? Rethinking Talk-to-Me Detection in Egocentric Videos",
+    "authors": ["Feiyu Du", "Xi He", "Jia Li", "Yapeng Tian", "Weili Wu"],
+    "venue": "ACM Multimedia (ACM MM)", "status": "Accepted",
+    "description": "Online frame-level Talk-to-Me detection for reasoning about addressees and social interaction in multimodal egocentric video.",
+    "image": "assets/images/publications/talk-to-me.png", "links": {"Paper": "https://doi.org/10.1145/3767308.3836441"}
+  },
+  {
+    "id": "calibration-2027", "year": 2027, "category": "transfer",
+    "title": "Calibration Is Not Recoverability: A-Priori Certificates for Amortized Simulation-Based Inference",
+    "authors": ["Xi He", "Feiyu Du"], "venue": "AAAI 2027 submission", "status": "Under Review", "image": "assets/images/publications/calibration-recoverability.png", "links": {}
+  },
+  {
+    "id": "feature-interactions-2027", "year": 2027, "category": "quantum",
+    "title": "Estimating Feature Interactions Across Input Distributions in Quantum Machine Learning",
+    "authors": ["Xi He", "Feiyu Du"], "venue": "AAAI 2027 submission", "status": "Under Review", "image": "assets/images/publications/feature-interactions.png", "links": {}
+  },
+  {
+    "id": "gradual-da-2026", "year": 2026, "category": "transfer",
+    "title": "Path-Length-Aware Gradual Domain Adaptation via Edge-Budgeted Local Drift Control",
+    "authors": ["Xi He", "Feiyu Du", "Xiaohan Yu", "Weili Wu"], "venue": "NeurIPS 2026 submission", "status": "Under Review", "image": "assets/images/publications/path-length-gda.png", "links": {}
+  },
+  {
+    "id": "representation-reuse-2026", "year": 2026, "category": "quantum",
+    "title": "Representation Reuse as an Observation Channel: Common-Measurement Complexity in Repeated Quantum Inverse Learning",
+    "authors": ["Xi He", "Feiyu Du", "Yapeng Tian", "Weili Wu"], "venue": "NeurIPS 2026 submission", "status": "Under Review", "image": "assets/images/publications/representation-reuse.png", "links": {}
+  },
+  {
+    "id": "physics-2026", "year": 2026, "category": "multimodal",
+    "title": "Do Joint Audio-Video Generation Models Understand Physics?",
+    "authors": ["Zijun Cui", "Xiulong Liu", "Hao Fang", "Mingwei Xu", "Jiaqeng Liu", "Zexin Xu", "Weiguo Pian", "Shijian Deng", "Feiyu Du", "Chenming Ge", "Yapeng Tian"],
+    "venue": "NeurIPS 2026 Evaluations & Datasets submission", "status": "Under Review", "image": "assets/images/publications/joint-av-physics.png", "links": {"arXiv": "https://arxiv.org/abs/2605.07061", "Project": "https://zijuncui.com/AV-Phys/"}
+  },
+  {
+    "id": "fish-2024", "year": 2024, "category": "transfer",
+    "title": "Fish Target Recognition Method Based on Joint Deep Statistical Feature Alignment",
+    "authors": ["Haiyan Wang", "Feiyu Du", "Haiyang Yao", "Xiao Chen"], "venue": "Journal of Shaanxi University of Science & Technology", "status": "Published", "image": "assets/images/publications/fish-target-recognition.png", "links": {}
+  },
+  {
+    "id": "underwater-2023", "year": 2023, "category": "transfer",
+    "title": "Underwater Image Enhancement Algorithm Based on Domain Adaptive Method",
+    "authors": ["Feiyu Du", "Haiyan Wang", "Haiyang Yao", "Xiao Chen"], "venue": "Computer and Modernization", "status": "Published", "image": "assets/images/publications/underwater-enhancement.png", "links": {}
+  },
+  {
+    "id": "qjda-2023", "year": 2023, "featured": true, "category": "quantum",
+    "title": "Quantum Joint Distribution Adaptation on the Universal Quantum Computer",
+    "authors": ["Feiyu Du", "Xi He"], "venue": "IEEE PRAI", "status": "Published",
+    "description": "A quantum formulation of joint distribution adaptation for transfer learning on a universal quantum computer.",
+    "image": "assets/images/publications/paper-placeholder.svg", "links": {}
+  },
+  {
+    "id": "qksa-2023", "year": 2023, "featured": true, "category": "quantum",
+    "title": "Quantum Kernel Subspace Alignment for Unsupervised Domain Adaptation",
+    "authors": ["Xi He", "Feiyu Du"], "venue": "CACML", "status": "Published",
+    "description": "A quantum kernel approach to align source and target subspaces for unsupervised domain adaptation.",
+    "image": "assets/images/publications/qksa.png", "links": {"Paper": "https://doi.org/10.1145/3590003.3590054"}
+  },
+  {
+    "id": "qclassifiers-2023", "year": 2023, "featured": true, "category": "quantum",
+    "title": "Quantum Classifiers for Domain Adaptation",
+    "authors": ["Xi He", "Feiyu Du", "Mingyuan Xue", "Xiaogang Du", "Tao Lei", "A. K. Nandi"],
+    "venue": "Quantum Information Processing, 22(2):105", "status": "Published",
+    "description": "Quantum classifier designs for domain adaptation using linear-algebra and variational hybrid procedures.",
+    "image": "assets/images/publications/quantum-classifiers.jpg", "links": {"Paper": "https://doi.org/10.1007/s11128-023-03846-0", "arXiv": "https://arxiv.org/abs/2110.02808"}
+  }
+]

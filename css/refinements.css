@@ -1,0 +1,102 @@
+/* Final visual hierarchy refinements. Loaded after the base stylesheet. */
+body { overflow-x: hidden; }
+.nav { justify-content: flex-end; }
+.intro h1 {
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -.025em;
+  text-align: center;
+  margin-bottom: 1.15rem;
+}
+.profile-links { gap: 0; }
+.profile-links a { font-size: .84rem; font-weight: 500; }
+.profile-links a + a::before {
+  content: "/";
+  display: inline-block;
+  margin: 0 .55rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+.intro-copy,
+.featured-content,
+.publication { min-width: 0; overflow-wrap: anywhere; }
+
+.portrait { width: 220px; }
+.portrait img {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 3px;
+}
+.featured-card:first-child {
+  grid-template-columns: 330px 1fr;
+  border-left: 4px solid var(--blue);
+  box-shadow: 0 10px 28px rgba(30, 55, 75, .07);
+}
+
+.publication.is-under-review { padding-bottom: 1.2rem; margin-bottom: 1.2rem; }
+.publication.is-under-review h3 {
+  color: #4f555b;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.publication.is-under-review .authors,
+.publication.is-under-review .venue { color: #73787d; }
+.undated-review-list {
+  margin-bottom: 2.5rem;
+  padding-bottom: .6rem;
+  border-bottom: 1px dashed #c8cdd1;
+}
+
+.publication {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 1.6rem;
+  align-items: start;
+  padding-bottom: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+.publication-image {
+  display: grid;
+  place-items: center;
+  width: 240px;
+  min-height: 142px;
+  padding: .45rem;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.publication-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 170px;
+  object-fit: contain;
+}
+.publication-content { min-width: 0; padding-top: .1rem; }
+.publication-content h3 { margin-bottom: .35rem; }
+.publication-content .description { margin-top: .5rem; }
+.publication.is-under-review .publication-image { opacity: .72; }
+
+@media (max-width: 760px) {
+  .wrap { width: calc(100vw - 30px); max-width: calc(100vw - 30px); }
+  .intro h1 { font-size: 1.8rem; }
+  .portrait { width: min(220px, 100%); }
+  .featured-card:first-child { grid-template-columns: 1fr; }
+  .publication { grid-template-columns: 1fr; gap: 1rem; }
+  .publication-image { width: 100%; min-height: 0; }
+  .publication-image img { max-height: 220px; }
+  main,
+  .wrap,
+  .intro-copy,
+  .bio,
+  #publication-list,
+  .year-group,
+  .year-group > div,
+  .publication-content { min-width: 0; max-width: 100%; }
+  .filters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: .35rem; }
+}

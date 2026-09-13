@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feiyu Du | Computer Science Ph.D. Student</title>
+  <meta name="description" content="Feiyu Du is a Computer Science Ph.D. student at The University of Texas at Dallas working on multimodal learning, egocentric video understanding, and social intelligence.">
+  <meta name="author" content="Feiyu Du">
+  <meta name="theme-color" content="#f8f8f5">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://feiyu-du.github.io/">
+  <meta property="og:title" content="Feiyu Du | Computer Science Ph.D. Student">
+  <meta property="og:description" content="Research in multimodal learning, egocentric video understanding, and social intelligence.">
+  <meta property="og:image" content="https://feiyu-du.github.io/assets/og-placeholder.svg">
+  <link rel="canonical" href="https://feiyu-du.github.io/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/refinements.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">About</a><a href="#news">News</a><a href="#publications">Publications</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="intro wrap" id="about">
+      <div class="intro-copy">
+        <h1>Feiyu Du | 杜菲瑀</h1>
+        <p class="bio">I am a first-year Ph.D. student in Computer Science at The University of Texas at Dallas, advised by <a href="https://personal.utdallas.edu/~dxd056000/" target="_blank" rel="noopener noreferrer">Prof. Dingzhu Du</a>. My research focuses on multimodal learning, VLLMs, world models, and quantum machine learning, with a particular interest in video generation and understanding in social scenarios.</p>
+        <ul class="interest-list" aria-label="Research interests">
+          <li>Multimodal Learning</li><li>VLLMs</li><li>World Models</li><li>Quantum Machine Learning</li>
+        </ul>
+        <div class="profile-links" aria-label="Profile links">
+          <a href="mailto:feiyuu.du@gmail.com">feiyuu.du@gmail.com</a>
+          <a href="https://scholar.google.com.hk/citations?user=C6yxoiUAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://github.com/Feiyu-Du" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <img src="assets/profile.jpg" data-fallback="assets/profile-placeholder.svg" onerror="this.onerror=null;this.closest('figure').classList.add('placeholder');this.src=this.dataset.fallback" alt="Portrait of Feiyu Du" width="360" height="440">
+        <figcaption class="placeholder-note">Replace <code>assets/profile.jpg</code> with your photo.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section wrap" id="news">
+      <div class="section-heading"><p class="section-index">01</p><h2>News</h2></div>
+      <div id="news-list" class="news-list" aria-live="polite"><p class="loading">Loading news…</p></div>
+      <button id="news-more" class="text-button" hidden>Show more</button>
+    </section>
+
+    <section class="section wrap" id="publications">
+      <div class="section-heading"><p class="section-index">02</p><h2>Publications</h2></div>
+      <div class="filters" role="group" aria-label="Filter publications">
+        <button class="filter active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" data-filter="multimodal">Multimodal &amp; Vision</button>
+        <button class="filter" data-filter="transfer">Transfer Learning</button>
+        <button class="filter" data-filter="quantum">Quantum ML</button>
+      </div>
+      <div id="publication-list" aria-live="polite"><p class="loading">Loading publications…</p></div>
+    </section>
+  </main>
+
+  <footer class="footer wrap"><p>© <span id="year"></span> Feiyu Du. Built for the open web.</p><a href="#about">Back to top ↑</a></footer>
+</body>
+</html>
