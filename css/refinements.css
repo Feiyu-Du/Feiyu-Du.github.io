@@ -12,6 +12,7 @@ body { overflow-x: hidden; }
 }
 .profile-links { gap: 0; }
 .profile-links a { font-size: .84rem; font-weight: 500; }
+.collaboration-note { margin: .8rem 0 0; color: #c62828; }
 .profile-links a + a::before {
   content: "/";
   display: inline-block;
