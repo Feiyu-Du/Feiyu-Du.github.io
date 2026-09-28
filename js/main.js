@@ -33,7 +33,9 @@ function renderPublications(publications, filter = 'all') {
     .map(entry => entry.item);
   const publicationHTML = item => `
         <article class="publication ${item.status === 'Under Review' ? 'is-under-review' : ''}">
-          <div class="publication-image"><img src="${escapeHTML(item.image || 'assets/images/publications/paper-placeholder.svg')}" alt="${!item.image || item.image.includes('paper-placeholder') ? 'Paper figure pending' : `Figure from ${escapeHTML(item.title)}`}" width="480" height="300" loading="lazy"></div>
+          ${item.id === 'ttm-2026' && item.links?.Project
+            ? `<a class="publication-image" href="${escapeHTML(item.links.Project)}" target="_blank" rel="noopener noreferrer" aria-label="Open project page: ${escapeHTML(item.title)}">`
+            : '<div class="publication-image">'}<img src="${escapeHTML(item.image || 'assets/images/publications/paper-placeholder.svg')}" alt="${!item.image || item.image.includes('paper-placeholder') ? 'Paper figure pending' : `Figure from ${escapeHTML(item.title)}`}" width="480" height="300" loading="lazy">${item.id === 'ttm-2026' && item.links?.Project ? '</a>' : '</div>'}
           <div class="publication-content">
             <h3>${escapeHTML(item.title)}</h3>
             <p class="authors">${authorHTML(item.authors)}</p>

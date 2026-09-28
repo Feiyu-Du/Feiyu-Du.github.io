@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Online TTM | ACM Multimedia 2026</title>
+  <meta name="description" content="Online frame-level Talk-to-Me detection in egocentric video, accepted to ACM Multimedia 2026.">
+  <meta name="author" content="Feiyu Du, Xi He, Jia Li, Yapeng Tian, Weili Wu">
+  <meta property="og:title" content="Talking to Me or Someone Else? Rethinking Talk-to-Me Detection in Egocentric Videos">
+  <meta property="og:description" content="Online frame-level reasoning about who is speaking to the camera wearer.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://feiyu-du.github.io/Online-TTM/">
+  <meta property="og:image" content="https://feiyu-du.github.io/Online-TTM/assets/overview.png">
+  <link rel="canonical" href="https://feiyu-du.github.io/Online-TTM/">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Project navigation">
+      <a class="project-mark" href="#top" aria-label="Online TTM home">Online TTM</a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#demo">Demo</a>
+        <a href="#method">Method</a>
+        <a href="#dataset">Dataset</a>
+        <a href="#results">Results</a>
+        <a href="#citation">Citation</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" id="top">
+      <p class="venue-kicker">ACM Multimedia 2026</p>
+      <h1><span>Talking to Me or Someone Else?</span> Rethinking Talk-to-Me Detection in Egocentric Videos</h1>
+      <p class="authors">
+        <a href="https://feiyu-du.github.io/">Feiyu Du</a>,
+        <span>Xi He</span>,
+        <span>Jia Li</span>,
+        <a href="https://www.yapengtian.com/" target="_blank" rel="noopener noreferrer">Yapeng Tian</a>,
+        <span>Weili Wu</span>
+      </p>
+      <p class="affiliation">The University of Texas at Dallas</p>
+      <p class="venue">ACM Multimedia 2026 <span aria-hidden="true">·</span> Accepted</p>
+      <p class="acceptance">Acceptance Rate: 25%</p>
+      <div class="resource-links" aria-label="Paper resources">
+        <a href="https://arxiv.org/abs/2609.14118" target="_blank" rel="noopener noreferrer">arXiv</a>
+        <a href="https://doi.org/10.1145/3767308.3836441" target="_blank" rel="noopener noreferrer">DOI</a>
+        <a href="#demo">Demo</a>
+        <a href="#citation">BibTeX</a>
+      </div>
+      <div class="summary" aria-label="Paper summary">
+        <p class="summary-lead">We reformulate egocentric Talk-to-Me detection from offline clip-level recognition into an online frame-level prediction problem, enabling moment-level reasoning about who is speaking to the camera wearer.</p>
+        <p>We introduce the Online TTM Dataset, a benchmark derived from Ego4D Social with 406 egocentric videos and approximately 900K frame-level annotations across four socially meaningful speaking states: background, self-talking, talking-to-others, and talking-to-me.</p>
+      </div>
+    </section>
+
+    <section class="section demo-section" id="demo">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Demo</p>
+          <h2>Online social understanding in motion</h2>
+          <p>The ACM Multimedia 2026 demo presents the task, benchmark, multimodal model, and representative online predictions.</p>
+        </div>
+        <div class="video-frame">
+          <video controls playsinline preload="metadata">
+            <source src="assets/demo.mp4" type="video/mp4">
+            Your browser does not support HTML5 video. <a href="assets/demo.mp4">Open the demo video directly.</a>
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="overview">
+      <div class="section-heading">
+        <p class="eyebrow">Overview</p>
+        <h2>From clip labels to online social states</h2>
+        <p>The model predicts the current interaction state from present and past observations—never future frames.</p>
+      </div>
+      <figure class="paper-figure overview-figure">
+        <img src="assets/overview.png" alt="A continuous egocentric video stream transitioning among talking-to-others, talking-to-me, background, and self-talking states" width="1460" height="292">
+        <figcaption>Online Talk-to-Me recognition requires frame-level reasoning over dynamically changing social speaking states.</figcaption>
+      </figure>
+      <div class="state-grid" aria-label="Four online speaking states">
+        <article><strong>BG</strong><span>Background</span><p>No active wearer-centered speaking interaction.</p></article>
+        <article><strong>SELF</strong><span>Self-talking</span><p>The camera wearer is the current speaker.</p></article>
+        <article><strong>TTO</strong><span>Talking-to-Others</span><p>A visible person speaks to someone other than the wearer.</p></article>
+        <article class="state-primary"><strong>TTM</strong><span>Talking-to-Me</span><p>A visible person directly addresses the camera wearer.</p></article>
+      </div>
+    </section>
+
+    <section class="section section-tint" id="method">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Method</p>
+          <h2>Causal multimodal reasoning</h2>
+          <p>Person-centered visual evidence is aligned with acoustic and speech-semantic cues, fused across modalities, and modeled causally over time.</p>
+        </div>
+        <figure class="paper-figure method-figure">
+          <img src="assets/method.png" alt="Online TTM model with visual, audio and speech-semantic branches, cross-modal attention, and a causal temporal Transformer" width="1624" height="736">
+          <figcaption>Overview of the proposed online multimodal model for egocentric social speaking recognition.</figcaption>
+        </figure>
+        <div class="method-groups">
+          <article>
+            <h3>Person-centered vision</h3>
+            <ul>
+              <li>Facial appearance</li>
+              <li>Head representation</li>
+              <li>Mouth motion</li>
+              <li>Wearer-centered geometry</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Audio and semantics</h3>
+            <ul>
+              <li>Frame-synchronous acoustic features</li>
+              <li>Whisper-derived speech semantics</li>
+              <li>Cross-modal attention</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Online prediction</h3>
+            <ul>
+              <li>Causal temporal Transformer</li>
+              <li>Past-only context</li>
+              <li>Four-state frame prediction</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="dataset">
+      <div class="section-heading">
+        <p class="eyebrow">Dataset</p>
+        <h2>Online TTM Dataset</h2>
+        <p>The dataset is derived from the Ego4D Social benchmark and reconstructs frame-level supervision while preserving socially meaningful speaking-state transitions.</p>
+      </div>
+      <div class="stat-grid dataset-stats">
+        <article><strong>406</strong><span>Videos</span></article>
+        <article><strong>885,866</strong><span>Annotated Frames</span></article>
+        <article><strong>4</strong><span>Speaking States</span></article>
+        <article><strong>32</strong><span>Past Context Length</span></article>
+      </div>
+      <p class="section-note">The project page does not provide a dataset download because no verified public release URL is currently available.</p>
+    </section>
+
+    <section class="section section-tint" id="results">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Results</p>
+          <h2>Accurate and efficient online prediction</h2>
+          <p>The proposed multimodal model leads the evaluated methods on both frame-level and segment-level TTM recognition while remaining compact.</p>
+        </div>
+        <div class="stat-grid result-stats">
+          <article><strong>75.5%</strong><span>TTM Frame-level F1</span></article>
+          <article><strong>79.8%</strong><span>TTM Segment mAP</span></article>
+          <article><strong>4.49</strong><span>ms/frame Model-only Latency</span></article>
+          <article><strong>5.876M</strong><span>Parameters</span></article>
+        </div>
+        <div class="qualitative" id="examples">
+          <p class="eyebrow">Online Social Interaction Examples</p>
+          <h3>Reasoning through changing social context</h3>
+          <p>The primary qualitative demonstration is the <a href="#demo">embedded ACM MM video</a>, which shows how online predictions evolve as speakers shift their attention among the wearer, themselves, and other people.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell abstract" id="abstract">
+      <div class="section-heading">
+        <p class="eyebrow">Paper</p>
+        <h2>Abstract</h2>
+      </div>
+      <div class="abstract-copy">
+        <p>Online understanding of who is talking to the camera wearer is a key capability for egocentric social interaction. However, existing talk-to-me (TTM) studies are commonly formulated as offline clip-level recognition, which is poorly aligned with online interaction and overlooks the diverse non-TTM speaking states that naturally arise in egocentric videos. In this paper, we revisit this problem by reformulating it as an online, frame-level prediction task.</p>
+        <p>Instead of treating TTM as a binary problem against a single negative class, we model it in the presence of diverse and previously underexplored non-TTM states, such as talking-to-others, self-talking, and background conditions.</p>
+        <p>To support this new formulation, we construct an Online TTM Dataset consisting of 406 egocentric video clips with approximately 900K annotated frames, each labeled with frame-level social interaction categories (e.g., background, TTM, talking-to-others, self-talking), by extending the Ego4D social interaction benchmark. In this benchmark, we evaluate five adapted baselines and develop a new model that integrates social cues across modalities.</p>
+        <p>Experimental results show that our multimodal model, which jointly leverages audio, visual, and speech-semantic cues, achieves 75.5% frame-level F1 on TTM, outperforming strong baselines and enabling a systematic analysis of how different speaking states affect TTM recognition.</p>
+      </div>
+    </section>
+
+    <section class="section citation-section" id="citation">
+      <div class="shell citation-layout">
+        <div class="section-heading">
+          <p class="eyebrow">Citation</p>
+          <h2>BibTeX</h2>
+          <p>Official identifiers: <a href="https://arxiv.org/abs/2609.14118" target="_blank" rel="noopener noreferrer">arXiv:2609.14118</a> and <a href="https://doi.org/10.1145/3767308.3836441" target="_blank" rel="noopener noreferrer">doi:10.1145/3767308.3836441</a>.</p>
+        </div>
+        <div class="bibtex-block">
+          <button type="button" id="copy-bibtex" aria-describedby="copy-status">Copy BibTeX</button>
+          <pre><code id="bibtex">@inproceedings{du2026talking,
+  title     = {Talking to Me or Someone Else? Rethinking Talk-to-Me Detection in Egocentric Videos},
+  author    = {Du, Feiyu and He, Xi and Li, Jia and Tian, Yapeng and Wu, Weili},
+  booktitle = {Proceedings of the 34th ACM International Conference on Multimedia},
+  year      = {2026},
+  doi       = {10.1145/3767308.3836441},
+  url       = {https://arxiv.org/abs/2609.14118}
+}</code></pre>
+          <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <p>Online TTM · ACM Multimedia 2026</p>
+    <a href="https://feiyu-du.github.io/">Feiyu Du’s homepage</a>
+  </footer>
+</body>
+</html>
