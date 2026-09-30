@@ -80,6 +80,8 @@ body { overflow-x: hidden; }
 }
 .publication-content { min-width: 0; padding-top: .1rem; }
 .publication-content h3 { margin-bottom: .35rem; }
+.publication-title-link { color: inherit; text-decoration: none; }
+.publication-title-link:hover { color: var(--blue); text-decoration: underline; }
 .publication-content .description { margin-top: .5rem; }
 .publication.is-under-review .publication-image { opacity: .72; }
 

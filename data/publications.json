@@ -31,7 +31,7 @@
     "id": "physics-2026", "year": 2026, "category": "multimodal",
     "title": "Do Joint Audio-Video Generation Models Understand Physics?",
     "authors": ["Zijun Cui", "Xiulong Liu", "Hao Fang", "Mingwei Xu", "Jiaqeng Liu", "Zexin Xu", "Weiguo Pian", "Shijian Deng", "Feiyu Du", "Chenming Ge", "Yapeng Tian"],
-    "venue": "NeurIPS 2026 Evaluations & Datasets submission", "status": "Under Review", "image": "assets/images/publications/joint-av-physics.png", "links": {"arXiv": "https://arxiv.org/abs/2605.07061", "Project": "https://zijuncui.com/AV-Phys/"}
+    "venue": "NeurIPS 2026 · Evaluations & Datasets Track", "status": "Accepted", "image": "assets/images/publications/joint-av-physics.png", "links": {"arXiv": "https://arxiv.org/abs/2605.07061", "Project": "https://zijuncui.com/AV-Phys/"}
   },
   {
     "id": "fish-2024", "year": 2024, "category": "transfer",
